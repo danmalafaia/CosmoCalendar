@@ -588,6 +588,15 @@ public class CalendarView extends RelativeLayout implements OnDaySelectedListene
      */
     public List<Day> getSelectedDays() {
         List<Day> selectedDays = new ArrayList<>();
+
+//        for (int i = 0; i < monthAdapter.getData().size(); i++) {
+//            for (int j = 0; j < monthAdapter.getData().get(i).getDaysWithoutTitlesAndOnlyCurrent().size(); j++) {
+//                if (selectionManager.isDaySelected(monthAdapter.getData().get(i).getDaysWithoutTitlesAndOnlyCurrent().get(j))) {
+//                    selectedDays.add(monthAdapter.getData().get(i).getDaysWithoutTitlesAndOnlyCurrent().get(j));
+//                }
+//            }
+//        }
+
         for (Month month : monthAdapter.getData()) {
             for (Day day : month.getDaysWithoutTitlesAndOnlyCurrent()) {
                 if (selectionManager.isDaySelected(day)) {
@@ -595,6 +604,7 @@ public class CalendarView extends RelativeLayout implements OnDaySelectedListene
                 }
             }
         }
+
         return selectedDays;
     }
 
